@@ -18,17 +18,19 @@ class Config(object):
      * interpolate from ENV
     """
 
-    def __init__(self, config=''):
-        try:
+    def __init__(self, config=None):
+        if config is None:
+            config = {}
+        if isinstance(config, compat.basestring):
+            try:
+                self._config = yaml.load(config)
+            except Exception as e:
+                # Failed yaml loading? Stop here!
+                raise exceptions.ConfigError(
+                    'Config is not valid yaml (%s): \n%s' % (e, config))
+        else:
             # Config is kept as-is...
             self._config = config
-            # ... save Strings, that are yaml loaded
-            if isinstance(config, compat.basestring):
-                self._config = yaml.load(config)
-        except Exception as e:
-            # Failed yaml loading? Stop here!
-            raise exceptions.ConfigError(
-                'Config is not valid yaml (%s): \n%s' % (e, config))
 
     def __repr__(self):
         return repr(self._config)
