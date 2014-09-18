@@ -1,0 +1,8 @@
+appname: "docker-registry"
+port: 5000
+runtime: "python"
+build:
+    - "pip install -i http://pypi.douban.com/simple/ ./depends/docker-registry-core && python setup.py install"
+cmd:
+    - "python app.py"
+# 需要mount吧
