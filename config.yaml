@@ -1,9 +1,6 @@
 DOCKER_REGISTRY_CONFIG: "./docker-registry-config.yml"
 SETTINGS_FLAVOR: "prod"
 INDEX_ENDPOINT: "http://registry.intra.hunantv.com"
-SQLALCHEMY_INDEX_DATABASE: "mysql://registry:#8SQMU'Z6+@10.1.201.58:3306/registry"
-CACHE_REDIS_HOST: "10.1.201.88"
-CACHE_REDIS_PORT: "2001"
 CACHE_LRU_REDIS_HOST: "10.1.201.88"
 CACHE_LRU_REDIS_PORT: "2002"
 SMTP_HOST: "smtp.exmail.qq.com"
@@ -13,3 +10,12 @@ SMTP_FROM_ADDR: "docker-registry@gitup.me"
 SMTP_TO_ADDR: "noise+dockerregistry@gitup.me"
 SEARCH_BACKEND: "sqlalchemy"
 STORAGE_PATH: "/data/registry/"
+mysql:
+    username: "registry"
+    password: "#8SQMU'Z6+"
+    host: "10.1.201.58"
+    port: 3306
+    db: "registry"
+redis:
+    host: "10.1.201.88"
+    port: 2001
