@@ -9,7 +9,7 @@ SMTP_PASSWORD: "^123$456a"
 SMTP_FROM_ADDR: "docker-registry@gitup.me"
 SMTP_TO_ADDR: "noise+dockerregistry@gitup.me"
 SEARCH_BACKEND: "sqlalchemy"
-STORAGE_PATH: "/data/registry/"
+STORAGE_PATH: "/mnt/mfs/permdirs/docker-registry/"
 mysql:
     username: "registry"
     password: "#8SQMU'Z6+"
