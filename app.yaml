@@ -4,4 +4,4 @@ runtime: "python"
 build:
     - "pip install -i http://pypi.douban.com/simple/ ./depends/docker-registry-core && pip install -i http://pypi.douban.com/simple/ ./docker-registry#egg=docker-registry[bugsnag,newrelic]"
 cmd:
-    - "gunicorn -c gunicorn_config.py app:app"
+    - "gunicorn -c gunicorn_config.py app:application"
