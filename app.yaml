@@ -2,7 +2,7 @@ appname: "docker-registry"
 port: 5000
 runtime: "python"
 build:
-    - "apt-get -y install python-dev liblzma-dev libevent1-dev python-mysqldb && pip install -i http://pypi.douban.com/simple/ ./depends/docker-registry-core && pip install -i http://pypi.douban.com/simple/ ../docker-registry && pip install -i http://pypi.douban.com/simple/ mysql-python"
+    - "pip install -i http://pypi.douban.com/simple/ ./depends/docker-registry-core && pip install -i http://pypi.douban.com/simple/ ../docker-registry && pip install -i http://pypi.douban.com/simple/ mysql-python"
 cmd:
     - "gunicorn -c gunicorn_config.py app:application"
 services:
