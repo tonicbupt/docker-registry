@@ -13,6 +13,8 @@ with open('config.yaml') as f:
     os.environ['DOCKER_REGISTRY_CONFIG'] = os.path.abspath(os.environ['DOCKER_REGISTRY_CONFIG'])
     os.environ['CACHE_REDIS_HOST'] = str(env['redis']['host'])
     os.environ['CACHE_REDIS_PORT'] = str(env['redis']['port'])
+    for key, value in os.environ.iteritems():
+        print key, '  ', value
 
 
 from docker_registry.wsgi import application
