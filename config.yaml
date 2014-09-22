@@ -11,11 +11,11 @@ SMTP_TO_ADDR: "noise+dockerregistry@gitup.me"
 SEARCH_BACKEND: "sqlalchemy"
 STORAGE_PATH: "/docker-registry/permdir"
 mysql:
-    username: "registry"
+    username: "docker-registry"
     password: "#8SQMU'Z6+"
     host: "10.1.201.58"
     port: 3306
-    db: "registry"
+    db: "docker-registry"
 redis:
     host: "10.1.201.88"
     port: 2001
